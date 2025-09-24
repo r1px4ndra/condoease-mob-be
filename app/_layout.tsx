@@ -104,6 +104,10 @@ export default function RootLayout() {
             },
           }}
         />
+        <Stack.Screen
+          name="bills/settle"
+          options={{ headerShown: false }}
+        />
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="+not-found" />
       </Stack>

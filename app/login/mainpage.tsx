@@ -20,6 +20,12 @@ export default function MainPage() {
       >
         <Text style={styles.loginButtonText}>Login</Text>
       </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.loginButton}
+        onPress={() => router.push("/(tabs)")} // Navigate to index.tsx
+      >
+        <Text style={styles.loginButtonText}>Test: To Home</Text>
+      </TouchableOpacity>
       <View style={styles.signupContainer}>
         <Text style={styles.signupText}>Don’t have an account? </Text>
         <TouchableOpacity onPress={() => router.push("/register/register1")}>
