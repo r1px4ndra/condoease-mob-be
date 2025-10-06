@@ -7,6 +7,7 @@ export default function Dashboard() {
   const [activeTab, setActiveTab] = useState<"balance" | "dues">("balance");
   const { width } = useWindowDimensions();
   const router = useRouter();
+
   
   return (
     <View style={styles.container}>
@@ -211,7 +212,12 @@ export default function Dashboard() {
         )}
       </View>
     </View>
-        <TouchableOpacity style={styles.payButton} onPress={() => router.push('../bills/settle')}>
+        <TouchableOpacity style={styles.payButton} onPress={() => 
+          router.push({
+            pathname: '/bills/settle',
+            params: { invoiceId: 'CE-001', amount: 1234.56, description: 'Monthly Dues' },
+          },
+          )}>
                 <Text style={styles.payButtonText}>Settle Payment</Text>
         </TouchableOpacity>
       </ScrollView>

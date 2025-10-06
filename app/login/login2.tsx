@@ -1,15 +1,15 @@
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import React, { useState } from "react";
 import {
+  ActivityIndicator,
   Image,
   StyleSheet,
   Text,
   TextInput,
   TouchableOpacity,
   View,
-  ActivityIndicator,
 } from "react-native";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function Login2() {
   const router = useRouter();
@@ -65,7 +65,7 @@ export default function Login2() {
       <Text style={styles.label}>Email</Text>
       <TextInput
         style={styles.input}
-        placeholder="email@email.com"
+        placeholder="Email address"
         placeholderTextColor="#A9A9A9"
         value={email}
         onChangeText={setEmail} // Allow editing

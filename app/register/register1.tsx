@@ -1,8 +1,8 @@
 import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import React, { useState } from "react";
-import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View, Alert } from "react-native";
 import { router } from "expo-router";
+import React, { useState } from "react";
+import { Alert, Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 
 type RootStackParamList = {
   "register/register2": { email: string };
@@ -41,7 +41,7 @@ export default function Register1() {
       <Text style={styles.label}>Email</Text>
       <TextInput
         style={styles.input}
-        placeholder="email@email.com"
+        placeholder="Email address"
         placeholderTextColor="#A9A9A9"
         value={email}
         onChangeText={setEmail}

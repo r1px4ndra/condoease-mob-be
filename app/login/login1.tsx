@@ -22,7 +22,7 @@ export default function Login1() {
                <Text style={styles.label}>Email</Text>
                <TextInput
                     style={styles.input}
-                    placeholder="email@email.com"
+                    placeholder="Email address"
                     placeholderTextColor="#A9A9A9"
                     value={email}
                     onChangeText={setEmail}

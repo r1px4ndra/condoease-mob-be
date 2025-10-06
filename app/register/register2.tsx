@@ -1,14 +1,14 @@
 import { useRoute } from "@react-navigation/native";
-import { useRouter } from "expo-router";         // ← navigation after success
+import { useRouter } from "expo-router"; // ← navigation after success
 import React, { useState } from "react";
 import {
+  ActivityIndicator,
+  Alert,
   StyleSheet,
   Text,
   TextInput,
   TouchableOpacity,
   View,
-  Alert,
-  ActivityIndicator,
 } from "react-native";
 
 type Register2RouteParams = {
@@ -91,7 +91,7 @@ export default function Register2() {
       <Text style={styles.label}>Email</Text>
       <TextInput
         style={styles.input}
-        placeholder="email@example.com"
+        placeholder="Email address"
         placeholderTextColor="#A9A9A9"
         value={emailInput}
         onChangeText={setEmailInput}
