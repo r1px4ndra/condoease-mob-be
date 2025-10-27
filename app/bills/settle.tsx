@@ -32,7 +32,7 @@ export default function SettlePaymentScreen() {
         } else {
           Alert.alert("Error", "No invoice URL received");
         }
-      } else {
+      } else { 
         Alert.alert("Error", data.error || "Payment failed");
       }
     } catch (error) {

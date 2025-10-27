@@ -1,7 +1,7 @@
 import { IconSymbol } from "@/components/ui/IconSymbol";
 import { useRouter } from "expo-router";
 import React, { useState } from "react";
-import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View, useWindowDimensions } from "react-native";
+import { ScrollView, StyleSheet, Text, TouchableOpacity, View, useWindowDimensions } from "react-native";
 
 export default function Dashboard() {
   const [activeTab, setActiveTab] = useState<"balance" | "dues">("balance");
@@ -16,14 +16,7 @@ export default function Dashboard() {
         <TouchableOpacity style={styles.menuButton}>
           <IconSymbol size={40} color="#808080" name="chevron.left"/>
         </TouchableOpacity>
-        <Image
-          source={require("../../assets/images/icon.png")}
-          style={styles.logo}
-          resizeMode="contain"
-        />
-        <TouchableOpacity style={styles.profileButton}>
-          <IconSymbol name="person.circle" size={24} color="#000000" />
-        </TouchableOpacity>
+        <Text style={styles.headerText}>Payments</Text>
       </View>
       
       {/* Scrollable Content */}
@@ -233,7 +226,7 @@ const styles = StyleSheet.create({
   },
   header: {
     flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "flex-start",
     alignItems: "center",
     paddingHorizontal: 20,
     paddingTop: 40,
@@ -381,5 +374,10 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 5,
+  },
+  headerText: {
+    fontSize: 25,
+    fontWeight: "bold",
+    color: "#333",
   },
 });

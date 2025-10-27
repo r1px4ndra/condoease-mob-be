@@ -1,18 +1,19 @@
-import React, { useState } from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-  TouchableOpacity,
-  ScrollView,
-  Alert,
-  Image,
-  ActivityIndicator, 
-} from "react-native";
+import { IconSymbol } from "@/components/ui/IconSymbol";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Picker } from "@react-native-picker/picker";
 import * as ImagePicker from "expo-image-picker";
-import AsyncStorage from "@react-native-async-storage/async-storage";
+import React, { useState } from "react";
+import {
+  ActivityIndicator,
+  Alert,
+  Image,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from "react-native";
 
 export default function MaintenanceRequest() {
   const [selectedMaintenanceType, setSelectedMaintenanceType] = useState("emergency");
@@ -87,9 +88,15 @@ export default function MaintenanceRequest() {
   };
 
   return (
+    <View style={styles.mainContainer}>
+      {/* Header */}
+        <View style={styles.header}>
+          <TouchableOpacity style={styles.menuButton}>
+            <IconSymbol size={40} color="#808080" name="chevron.left"/>
+          </TouchableOpacity>
+          <Text style={styles.headerText}>Request Maintenance</Text>
+        </View>
     <ScrollView contentContainerStyle={styles.container}>
-      <Text style={styles.title}>Request Maintenance</Text>
-
       <View style={styles.formGroup}>
         <Text style={styles.label}>Types of Maintenance:</Text>
         <View style={styles.dropdown}>
@@ -150,6 +157,7 @@ export default function MaintenanceRequest() {
           )}
       </TouchableOpacity>
     </ScrollView>
+    </View>
   );
 }
 
@@ -167,6 +175,7 @@ const styles = StyleSheet.create({
   },
   formGroup: {
     marginBottom: 16,
+    borderColor: "#8FAF8B",
   },
   label: {
     fontSize: 16,
@@ -175,13 +184,13 @@ const styles = StyleSheet.create({
   },
   dropdown: {
     borderWidth: 1,
-    borderColor: "#ccc",
+    borderColor: "#8FAF8B",
     borderRadius: 8,
     overflow: "hidden",
   },
   textArea: {
     borderWidth: 1,
-    borderColor: "#ccc",
+    borderColor: "#8FAF8B",
     borderRadius: 8,
     padding: 12,
     minHeight: 100,
@@ -189,7 +198,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
   },
   fileButton: {
-    backgroundColor: "#FFA500",
+    backgroundColor: "#f57c00",
     paddingVertical: 12,
     paddingHorizontal: 16,
     borderRadius: 8,
@@ -202,7 +211,7 @@ const styles = StyleSheet.create({
   },
   filePreview: {
     borderWidth: 1,
-    borderColor: "#90EE90",
+    borderColor: "#8FAF8B",
     borderRadius: 8,
     padding: 16,
     alignItems: "center",
@@ -213,7 +222,7 @@ const styles = StyleSheet.create({
     color: "#666",
   },
   submitButton: {
-    backgroundColor: "#FFA500",
+    backgroundColor: "#f57c00",
     paddingVertical: 16,
     borderRadius: 8,
     alignItems: "center",
@@ -227,5 +236,28 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontSize: 18,
     fontWeight: "bold",
+  },
+  header: {
+    flexDirection: "row",
+    justifyContent: "flex-start",
+    alignItems: "center",
+    paddingHorizontal: 20,
+    paddingTop: 40,
+    backgroundColor: "#FFFFFF",
+    borderBottomWidth: 1,
+    borderBottomColor: "#E0E0E0",
+  },
+  menuButton: {
+    padding: 10,
+  },
+  headerText: {
+    fontSize: 25,
+    fontWeight: "bold",
+    color: "#333",
+  },
+  mainContainer: {
+    flex: 1,
+    backgroundColor: "#FFFFFF",
+    paddingBottom: 50,
   },
 });
