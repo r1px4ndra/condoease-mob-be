@@ -75,7 +75,7 @@ export default function AccountSettings() {
             <View style={styles.rowWrapper}>
               <TouchableOpacity
                 onPress={() => {
-                  // handle onPress
+                  router.push("/details/contact");
                 }}
                 style={styles.row}>
                 <Text style={styles.rowLabel}>Contact Details</Text>
@@ -90,7 +90,7 @@ export default function AccountSettings() {
             <View style={styles.rowWrapper}>
               <TouchableOpacity
                 onPress={() => {
-                  // handle onPress
+                  router.push("/details/tenantid");
                 }}
                 style={styles.row}>
                 <Text style={styles.rowLabel}>Tenant ID</Text>
@@ -105,7 +105,7 @@ export default function AccountSettings() {
             <View style={[styles.rowWrapper, styles.rowLast]}>
               <TouchableOpacity
                 onPress={() => {
-                  // handle onPress
+                  router.push("/details/emergencycontact");
                 }}
                 style={styles.row}>
                 <Text style={styles.rowLabel}>Emergency Contact</Text>

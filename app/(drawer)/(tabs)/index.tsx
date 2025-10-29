@@ -20,9 +20,7 @@ export default function Index() {
           style={styles.logo}
           resizeMode="contain"
         />
-        <TouchableOpacity style={styles.profileButton}>
-          <IconSymbol name="person.circle" size={24} color="#000000" />
-        </TouchableOpacity>
+
       </View>
 
       {/* Scrollable Content */}
@@ -104,7 +102,7 @@ const styles = StyleSheet.create({
   },
   header: {
     flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "flex-start",
     alignItems: "center",
     paddingHorizontal: 20,
     paddingTop: 40,
@@ -118,7 +116,7 @@ const styles = StyleSheet.create({
   logo: {
     width: 200,
     height: 50,
-    margin: 20
+    marginVertical:20,
   },
   profileButton: {
     padding: 10,

@@ -194,7 +194,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
   },
   fileButton: {
-    backgroundColor: "#f57c00",
+    backgroundColor: "#F28D35",
     paddingVertical: 12,
     paddingHorizontal: 16,
     borderRadius: 8,
@@ -218,7 +218,7 @@ const styles = StyleSheet.create({
     color: "#666",
   },
   submitButton: {
-    backgroundColor: "#f57c00",
+    backgroundColor: "#F28D35",
     paddingVertical: 16,
     borderRadius: 8,
     alignItems: "center",
