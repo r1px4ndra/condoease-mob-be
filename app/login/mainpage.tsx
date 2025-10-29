@@ -22,7 +22,7 @@ export default function MainPage() {
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.loginButton}
-        onPress={() => router.push("/(tabs)")} // Navigate to index.tsx
+        onPress={() => router.push("/(drawer)/(tabs)")} // Navigate to index.tsx
       >
         <Text style={styles.loginButtonText}>Test: To Home</Text>
       </TouchableOpacity>

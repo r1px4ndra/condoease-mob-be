@@ -1,6 +1,6 @@
-import { IconSymbol } from "@/components/ui/IconSymbol";
+// u can remove unused code snippets, i just left them for context
 import React, { useState } from "react";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 
 
 export default function Leases() {
@@ -10,10 +10,7 @@ export default function Leases() {
     <View style={styles.container}>
       {/* Header */}
       <View style={styles.header}>
-        <TouchableOpacity style={styles.menuButton}>
-          <IconSymbol size={40} color="#808080" name="chevron.left"/>
-        </TouchableOpacity>
-        <Text style={styles.headerText}>Request Maintenance</Text>
+        <Text style={styles.headerText}>Leases</Text>
       </View>
       <Text style={styles.subtitle}>Your lease will only be visible to you and the administrator.</Text>
       <Text style={styles.title}>Leases & Agreements</Text>
@@ -67,6 +64,7 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontWeight: "bold",
     color: "#333",
+    margin:20
   },
   filePreview: {
     borderWidth: 1,

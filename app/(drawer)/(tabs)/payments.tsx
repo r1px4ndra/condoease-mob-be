@@ -1,4 +1,3 @@
-import { IconSymbol } from "@/components/ui/IconSymbol";
 import { useRouter } from "expo-router";
 import React, { useState } from "react";
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View, useWindowDimensions } from "react-native";
@@ -13,9 +12,6 @@ export default function Dashboard() {
     <View style={styles.container}>
       {/* Header */}
       <View style={styles.header}>
-        <TouchableOpacity style={styles.menuButton}>
-          <IconSymbol size={40} color="#808080" name="chevron.left"/>
-        </TouchableOpacity>
         <Text style={styles.headerText}>Payments</Text>
       </View>
       
@@ -379,5 +375,6 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontWeight: "bold",
     color: "#333",
+    margin:20
   },
 });

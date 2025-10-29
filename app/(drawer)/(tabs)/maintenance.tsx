@@ -1,4 +1,3 @@
-import { IconSymbol } from "@/components/ui/IconSymbol";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Picker } from "@react-native-picker/picker";
 import * as ImagePicker from "expo-image-picker";
@@ -91,10 +90,7 @@ export default function MaintenanceRequest() {
     <View style={styles.mainContainer}>
       {/* Header */}
         <View style={styles.header}>
-          <TouchableOpacity style={styles.menuButton}>
-            <IconSymbol size={40} color="#808080" name="chevron.left"/>
-          </TouchableOpacity>
-          <Text style={styles.headerText}>Request Maintenance</Text>
+          <Text style={styles.headerText}>Maintenance</Text>
         </View>
     <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.formGroup}>
@@ -254,6 +250,7 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontWeight: "bold",
     color: "#333",
+    margin:20
   },
   mainContainer: {
     flex: 1,

@@ -1,19 +1,22 @@
 import { IconSymbol } from "@/components/ui/IconSymbol";
+import { DrawerActions, useNavigation } from '@react-navigation/native';
 import { useRouter } from "expo-router";
 import React from "react";
 import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export default function Index() {
   const router = useRouter();
+  const navigation = useNavigation();
+
   return (
     <View style={styles.container}>
       {/* Header */}
       <View style={styles.header}>
-        <TouchableOpacity style={styles.menuButton}>
+        <TouchableOpacity onPress={() => navigation.dispatch(DrawerActions.openDrawer())} style={styles.menuButton}>
           <IconSymbol name="menucard.fill" size={24} color="#000000" />
         </TouchableOpacity>
         <Image
-          source={require("../../assets/images/icon.png")}
+          source={require("../../../assets/images/icon.png")}
           style={styles.logo}
           resizeMode="contain"
         />
@@ -115,6 +118,7 @@ const styles = StyleSheet.create({
   logo: {
     width: 200,
     height: 50,
+    margin: 20
   },
   profileButton: {
     padding: 10,
