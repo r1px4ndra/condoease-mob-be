@@ -165,6 +165,7 @@ export default function AccountSettings() {
             </View>
           </View>
         </View>
+        <Text style={styles.changes}>Contact your Property Manager for changes in Lease & Unit Details.</Text>
           </ScrollView>
 
       </View>
@@ -260,5 +261,18 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-start',
     paddingRight: 12,
+  },
+  changes: {
+    margin: 8,
+    alignItems: 'center',
+    alignContent: 'center',
+    justifyContent: 'center',
+    marginLeft: 12,
+    fontSize: 13,
+    letterSpacing: 0.33,
+    lineHeight: 18,
+    fontWeight: '500',
+    color: '#5a5a5aff',
+    textTransform: 'uppercase',
   },
 });

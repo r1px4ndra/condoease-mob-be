@@ -1,7 +1,7 @@
 import { IconSymbol } from "@/components/ui/IconSymbol";
 import { useRouter } from "expo-router";
 import React from "react";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Alert, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 
 export default function Settings() {
@@ -31,7 +31,7 @@ export default function Settings() {
               <View style={[styles.rowWrapper, styles.rowFirst]}>
                 <TouchableOpacity
                   onPress={() => {
-                    router.push("/");
+                    Alert.alert("Oops!", "The user manual is not available at this time.");
                   }}
                   style={styles.row}>
                   <Text style={styles.rowLabel}>User Manual</Text>
