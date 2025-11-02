@@ -46,7 +46,9 @@ export default function Login2() {
       await AsyncStorage.setItem("token", token);
       await AsyncStorage.setItem("user", JSON.stringify(user));
 
-      router.replace("/(drawer)/(tabs)");
+      router.replace({
+        pathname: "/(drawer)"
+      });
     } catch (err) {
       const message =
         err instanceof Error ? err.message : "Login failed. Please try again.";
