@@ -28,6 +28,7 @@ export default function Login2() {
     setError("");
 
     try {
+      console.log('Attempting to login with:', apiUrl);
       const response = await fetch(`${apiUrl}/api/login`, {
         method: "POST",
         headers: {
@@ -36,20 +37,30 @@ export default function Login2() {
         body: JSON.stringify({ email, password }),
       });
 
+      // First, try to get the error response if there is one
+      const responseData = await response.json().catch(() => null);
+      
       if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData?.error || "Login failed.");
+        console.log('Login failed with status:', response.status);
+        console.log('Response data:', responseData);
+        throw new Error(
+          responseData?.error || 
+          `Login failed with status ${response.status}`
+        );
       }
 
-      const { token, user } = await response.json();
+      const { token, user } = responseData;
+
+      if (!token || !user) {
+        throw new Error('Invalid response format from server');
+      }
 
       await AsyncStorage.setItem("token", token);
       await AsyncStorage.setItem("user", JSON.stringify(user));
 
-      router.replace({
-        pathname: "/(drawer)"
-      });
+      router.push("/(tabs)");
     } catch (err) {
+      console.error('Login error:', err);
       const message =
         err instanceof Error ? err.message : "Login failed. Please try again.";
       setError(message);
